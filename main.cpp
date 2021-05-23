@@ -11,7 +11,7 @@ bool getLineInputCorrectness (std::string linesSum)
     return true;
 }
 
-int getWinCombinationsCountForSymbol(char playerSymbol, std::string linesSum)
+int getWinCombinationsCount(char playerSymbol, std::string linesSum)
 {
     int winCombinationsCount = 0;
 
@@ -41,8 +41,8 @@ std::string getGameStatus(std::string linesSum)
 {
     if (!getLineInputCorrectness(linesSum)) return "ERROR - wrong symbols are used\n";
 
-    int crossesWinCombinations = getWinCombinationsCountForSymbol('X', linesSum);
-    int zerosWinCombinations = getWinCombinationsCountForSymbol('O', linesSum);
+    int crossesWinCombinations = getWinCombinationsCount('X', linesSum);
+    int zerosWinCombinations = getWinCombinationsCount('O', linesSum);
     if (crossesWinCombinations > 1) return "ERROR - several winning combinations for crosses.\n";
     else if (zerosWinCombinations > 1) return "ERROR - several winning combinations for zeros.\n";
     else
